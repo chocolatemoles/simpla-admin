@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+	<title>elFinder 2.1.x source version with PHP connector</title>
+
+	<link rel="stylesheet" href="../jquery/jquery-ui.min.css">
+	<link rel="stylesheet" href="css/elfinder.min.css">
+	<link rel="stylesheet" href="css/theme.css">
+
+	<script src="../jquery/jquery.min.js"></script>
+	<script src="../jquery/jquery-ui.min.js"></script>
+	<script src="js/elfinder.min.js"></script>
+
+	<script>
+		// https://github.com/Studio-42/elFinder/wiki/Client-configuration-options
+		$(document).ready(function() {
+			$('#elfinder').elfinder({
+				getFileCallback : function(file, fm) {
+					parent.tinymce.activeEditor.windowManager.getParams().oninsert(file, fm);
+					parent.tinymce.activeEditor.windowManager.close();
+				},
+				cssAutoLoad : false,
+				baseUrl : './',
+				url : 'php/connector.minimal.php',
+				lang: 'ru',
+				rememberLastDir: false,
+				reloadClearHistory: true,
+				useBrowserHistory: false,
+				//onlyMimes: ["image"],
+				resizable: false,
+				height : '100%',
+				uiOptions : {
+					// toolbar configuration
+					toolbar : [
+						['reload'],
+						['home', 'up'],
+						['upload'],
+						['copy', 'cut', 'paste'],
+						['rm'],
+						['rename'],
+						['view'],
+					],
+					// directories tree options
+					tree : {
+						// expand current root on init
+						openRootOnLoad : true,
+						// auto load current dir parents
+						syncTree : true
+					},
+					// current working directory options
+					cwd : {
+						// display parent directory in listing as ".."
+						oldSchool : false
+					}
+				},
+				contextmenu : {
+					// navbarfolder menu
+					navbar : ['fullscreen', 'open', '|', 'copy', 'cut', 'paste', '|', 'rm', '|', 'info'],
+
+					// current directory menu
+					cwd    : ['reload', 'back', '|', 'upload', 'mkdir', 'paste', '|', 'info'],
+
+					// current directory file menu
+					files  : [
+						'getfile', '|','open', '|', 'download', '|', 'copy', 'cut', 'paste', '|',
+						'rm', '|', 'rename', '|', 'info'
+					]
+				},
+			}).elfinder('instance').exec('fullscreen');
+		});
+	</script>
+</head>
+<body>
+	<!-- Element where elFinder will be created (REQUIRED) -->
+	<div id="elfinder"></div>
+</body>
+</html>

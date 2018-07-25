@@ -1,0 +1,59 @@
+.btn-progress {
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+}
+
+.btn-progress[disabled]{
+	cursor: default;
+	opacity: 1;
+	transform: translateY(0);
+}
+.btn-progress-text {
+	position: relative;
+	transition: all .3s ease;
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0px);
+	display: inline-block;
+	z-index: 3
+}
+.btn-progress-percent {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: block;
+
+	transition: all .3s ease;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(10px);
+	z-index: 3
+}
+.btn-progress-line {
+	top: 0;
+	width: 0;
+	left: 0;
+	position: absolute;
+	bottom: 0;
+	background: rgba(0,0,0,0.25);
+	z-index: 2
+}
+.btn-progress.loading .btn-progress-text {
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(-10px)
+}
+.btn-progress.loading .btn-progress-percent {
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(2px);
+}
+.btn-progress.loading .btn-progress-line {
+	transition: all .3s ease;
+}
+.btn-progress.success .btn-progress-line {
+	transition: opacity .3s ease;
+}

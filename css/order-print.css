@@ -1,0 +1,112 @@
+#map{
+	width: 100%;
+	max-width: 100%;
+	height: 120mm;
+    page-break-before: auto;
+    page-break-after: auto;
+    page-break-inside: avoid;
+}
+body{
+	font: 14pt/1.5 'Roboto', sans-serif;
+	position: relative;
+	width: 210mm;
+	margin: 0 auto
+}
+.order-id{
+    font-size: 2em;
+    margin-bottom: 0;
+	padding-left: 15px;
+}
+.order-date{
+    margin-top: 0;
+    margin-bottom: 2em;
+	padding-left: 15px;
+}
+.company-name{
+    position: absolute;
+    top: 0px;
+    right: 15px;
+}
+.website-url{
+    position: absolute;
+    top: 35px;
+    right: 15px;
+}
+.purchases{
+    width: 100%;
+    border-collapse: collapse;
+}
+.purchases thead td{
+    font-size: .85em;
+    border-bottom: 1px solid #9e9e9e;
+    padding: 10px 15px;
+    white-space: nowrap;
+}
+.purchases thead td:nth-child(n+3){
+	text-align: center
+}
+.purchases tbody td{
+    vertical-align: text-bottom;
+    padding: 10px 15px;
+    border-bottom: 1px solid #eee;
+}
+.purchases tbody td.purchase-sku{
+    width: 1%;
+    white-space: nowrap;
+}
+.purchases tbody td .purchase-variant{
+    margin: 0;
+    font-size: .75em;
+}
+.purchases tbody td.purchase-price{
+    text-align: right;
+    width: 1%;
+    white-space: nowrap;
+}
+.purchases tbody td.purchase-amount{
+    text-align: right;
+    width: 1%;
+    white-space: nowrap;
+}
+.purchases tbody td.purchase-total{
+    text-align: right;
+    width: 1%;
+    white-space: nowrap;
+}
+.purchases tbody tr:last-child td{
+	border-bottom-color: #9e9e9e;
+}
+.total{
+	float: right;
+	border-collapse: collapse;
+}
+.total tbody td{
+	padding: 10px 15px;
+	text-align: right;
+	border-bottom: 1px solid #eee
+}
+.total tbody td.purchase-total{
+	text-align: right;
+    width: 1%;
+    white-space: nowrap;
+}
+.total tbody tr:first-child td{
+	padding-top: 2em
+}
+.total tbody tr.total-row td{
+	border-bottom: 3px double #9e9e9e
+}
+.clearfix{
+	clear: both
+}
+.customer{
+	margin: 1em 0;
+}
+.customer td{
+	padding: 5px 15px;
+	vertical-align: top;
+}
+.customer td:first-child{
+	font-size: .75em;
+	padding-top: 7pt;
+}

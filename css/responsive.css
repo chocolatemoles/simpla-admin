@@ -1,0 +1,132 @@
+@media (min-width: 1280px){
+	.no-touchevents .content{
+		min-height: 100vh;
+	}
+	
+	/* Base layout */
+	.no-touchevents .container{
+		width: 1200px
+	}
+	.no-touchevents .content-top{
+		margin-left: 260px;
+	}
+	.no-touchevents .content-left{
+		width: 230px;
+		position: fixed;
+		top: 0;
+		bottom: 0;
+	}
+	.no-touchevents .content-center{
+		width: 710px;
+		margin-left: 230px;
+		padding-left: 30px;
+		padding-bottom: 91px;
+	}
+	.no-touchevents .content-right{
+		padding-bottom: 91px;
+	}
+	.no-touchevents .content-bottom{
+		margin-left: 260px;
+	}
+	.no-touchevents .content-footer{
+		margin-top: -91px;
+		padding-left: 260px;
+	}
+	.no-touchevents .content-fullwidth{
+		width: 940px;
+		padding-right: 0;
+	}
+	
+	/* Sidemenu stuff */
+	.no-touchevents .mobile-menu-toggle{
+		display: none;
+	}
+	.no-touchevents .sidemenu-store-link{
+		position: static;
+		display: block;
+		padding: 10px 15px;
+		background: #303747;
+		color: #B0BEC5;
+		margin: 0;
+		height: auto;
+		line-height: unset;
+		position: absolute;
+		left: 0;
+		right: 0;
+		z-index: 3;
+	}
+	.no-touchevents .sidemenu-store-link:hover{
+		color: #fff
+	}
+	.no-touchevents .sidemenu-account-box{
+		position: relative;
+		padding: 10px 15px 5px 42px;
+		background: #3f4658;
+		position: absolute;
+		left: 0;
+		top: 40px;
+		z-index: 3;
+	}
+	.no-touchevents .with-shadow .sidemenu-account-box{
+		box-shadow: 0 3px 3px -3px #1e232f;
+	}
+	.no-touchevents .sidemenu-account-label{
+		display: block;
+		margin: 10px 0 0;
+		line-height: unset;
+	}
+	.no-touchevents .sidemenu-account-login{
+		margin: 0 0 15px;
+		display: block;
+		color: #e2e7e9;
+		white-space: nowrap;
+	}
+	.no-touchevents .sidemenu-account-logout{
+		position: absolute;
+		top: 22px;
+		left: 6px;
+		display: block;
+		width: 30px;
+		height: 30px;
+		text-align: center;
+		text-decoration: none;
+		line-height: 30px;
+		color: #B0BEC5;
+		transition: color .3s ease
+	}
+	.no-touchevents .sidemenu-account-logout:hover{
+		color: #fff
+	}
+	
+	/* Sidemenu categories */
+	.no-touchevents .sidemenu-categories{
+		display: block;
+		border: none;
+		-ms-user-select: none; 
+		-moz-user-select: none; 
+		-webkit-user-select: none; 
+		user-select: none; 
+	}
+	.no-touchevents .sidemenu-categories-wrapper{
+		padding-bottom: 25px;
+		position: absolute;
+		top: 115px;
+		bottom: 40px;
+		left: 0;
+		right: 0;
+		overflow: visible!important
+	}
+	.no-touchevents .sidemenu-categories a{
+		padding-left: 15px;
+	}
+	.no-touchevents .sidemenu-categories ul a{
+		padding-left: 30px;
+	}
+	.no-touchevents .sidemenu-toggle{
+		right: 0;
+		left: auto;
+	}
+	.no-touchevents .sidemenu-list .counters{
+		position: absolute;
+	}
+}
