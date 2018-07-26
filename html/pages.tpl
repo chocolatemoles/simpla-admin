@@ -15,7 +15,7 @@
 					<input type="checkbox" class="list-checkbox" name="check[]" value="{$page->id}">
 
 					<div class="list-name">
-						<a href="index.php?module=PageAdmin&id={$page->id}">{$page->header|escape}</a>
+						<a href="index.php?module=PageAdmin&id={$page->id}&menu_id={$smarty.get.menu_id}">{$page->header|escape}</a>
 					</div>
 						
 					<div class="list-actions">

@@ -174,7 +174,7 @@
 	{$smarty.capture.scripts}
 	
 	<!-- Prostie Zvonki -->
-	{if !$settings->pz_server && !$settings->pz_phones[$manager->login]}
+	{if $settings->pz_server && $settings->pz_phones[$manager->login]}
 	<div class="pz-popup"></div>
 	<script src="design/js/prostiezvonki/prostiezvonki.min.js"></script>
 	<script>

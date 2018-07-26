@@ -621,11 +621,11 @@
 			url: "ajax/get_features.php",
 			data: {
 				category_id: $(this).find('option:selected').val(),
-				product_id: {$product->id}
+				product_id: '{$product->id}'
 			},
 			dataType: 'json',
 			success: function (data) {
-				for (i = 0; i < data.length; i++) {
+				for (var i = 0; i < data.length; i++) {
 					var feature = data[i];
 
 					$('<div>', {

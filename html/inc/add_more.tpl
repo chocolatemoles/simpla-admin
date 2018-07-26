@@ -9,5 +9,5 @@
 		{$add_more_plural = 'один'}
 	{/if}
 
-	<a href="http://simpla-admin/simpla/index.php?module={$smarty.get.module}{if $smarty.get.menu_id}&menu_id={$smarty.get.menu_id}{/if}">Добавить еще {$add_more_plural}</a>
+	<a href="index.php?module={$smarty.get.module}{if $smarty.get.menu_id}&menu_id={$smarty.get.menu_id}{/if}">Добавить еще {$add_more_plural}</a>
 {/if}

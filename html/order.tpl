@@ -14,7 +14,7 @@
 	{$alert_success = 'Заказ добавлен' scope=root}
 {/if}
 
-<form method="post" enctype="multipart/form-data" {if !$purchases}class="edit-purchases"{/if} data-form="order" autocomplete="off">
+<form method="post" enctype="multipart/form-data" class="{if !$purchases} edit-purchases{/if} {if !$order->id} edit-user{/if}" data-form="order" autocomplete="off">
 	<input type="hidden" name="session_id" value="{$smarty.session.id}">
 	<input type="hidden" name="id" value="{$order->id|escape}">
 
@@ -118,6 +118,23 @@
 
 			<hr>
 			
+			<!-- Discount -->
+			<div class="form-row">
+				<label for="" class="form-label">Скидка</label>
+				<span class="form-input-box" data-suffix="%" data-width="sm">
+					<input type="text" class="form-input" name="discount" value="{$order->discount}">
+				</span>
+			</div>
+
+			<div class="form-row">
+				<label for="" class="form-label">Купон{if $order->coupon_code} ({$order->coupon_code}){/if}</label>
+				<span class="form-input-box" data-suffix="{$currency->sign}" data-width="sm">
+					<input type="text" class="form-input" name="coupon_discount" value="{$order->coupon_discount}">
+				</span>
+			</div>
+
+			<hr>
+			
 			<!-- Customer -->
 			<div class="order-user-section">
 				<p class="block-title">Покупатель</p>
@@ -190,24 +207,7 @@
 			</div>
 			
 			<hr>
-			
-			<!-- Discount -->
-			<div class="form-row">
-				<label for="" class="form-label">Скидка</label>
-				<span class="form-input-box" data-suffix="%" data-width="sm">
-					<input type="text" class="form-input" name="discount" value="{$order->discount}">
-				</span>
-			</div>
 
-			<div class="form-row">
-				<label for="" class="form-label">Купон{if $order->coupon_code} ({$order->coupon_code}){/if}</label>
-				<span class="form-input-box" data-suffix="{$currency->sign}" data-width="sm">
-					<input type="text" class="form-input" name="coupon_discount" value="{$order->coupon_discount}">
-				</span>
-			</div>
-
-			<hr>
-			
 			<!-- Delivery -->
 			<p class="block-title">Доставка</p>
 			
