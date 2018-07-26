@@ -14,7 +14,7 @@
 	{$alert_success = 'Заказ добавлен' scope=root}
 {/if}
 
-<form method="post" enctype="multipart/form-data" data-form="order" autocomplete="off">
+<form method="post" enctype="multipart/form-data" {if !$purchases}class="edit-purchases"{/if} data-form="order" autocomplete="off">
 	<input type="hidden" name="session_id" value="{$smarty.session.id}">
 	<input type="hidden" name="id" value="{$order->id|escape}">
 
