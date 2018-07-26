@@ -45,13 +45,17 @@
 			</div>
 		{/if}
 	</form>
-{/if}
 
-{capture name = 'sidebar'}
+	{capture name = 'sidebar'}
+		{if $message_error != 'no_permission'}
+			<button class="btn btn-green btn-progress">Экспортировать</button>
+		{/if}
+	{/capture}
+{else}
 	{if $message_error != 'no_permission'}
 		<button class="btn btn-green btn-progress">Экспортировать</button>
 	{/if}
-{/capture}
+{/if}
 
 {capture name = 'scripts'}
 <link rel="stylesheet" href="design/js/progress/progress.css">
@@ -60,7 +64,8 @@
 (function($){
 	'use strict';
 	
-	var filename = 'export_{trim($manager->login)}_{date("Y_m_d_G_i_s")}.csv';
+	// var filename = 'export_{trim($manager->login)}_{date("Y_m_d_G_i_s")}.csv'; // For Obsen 
+	var filename = 'export.csv';
 
 	new ProgressButton(document.querySelector('.btn-progress'), {
 		callback : function( instance ) {

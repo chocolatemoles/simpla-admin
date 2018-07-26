@@ -18,7 +18,7 @@
 					</div>
 					
 					<div class="list-actions">
-						<a href="#" class="list-action" title="Использовать в фильтре"  data-action="in_filter"></a>
+						<a href="#" class="list-action" title="Использовать в фильтре" data-action="in_filter"></a>
 						<a href="#" class="list-action" title="Удалить" data-action="delete"></a>
 					</div>
 				</div>

@@ -72,7 +72,7 @@
 
 				<div class="list-actions">
 					<a href="../products/{$product->url}" class="list-action" data-action="preview" title="Предпросмотр в новом окне" target="_blank"></a>
-					<a href="#" class="list-action" data-action="enable" data-id="{$variant->id}" title="Активен"></a>
+					<a href="#" class="list-action" data-action="visible" title="Активен"></a>
 					<a href="#" class="list-action" data-action="featured" title="Рекомендуемый"></a>
 					<a href="#" class="list-action" data-action="duplicate" title="Дублировать"></a>
 					<a href="#" class="list-action" data-action="delete" title="Удалить"></a>

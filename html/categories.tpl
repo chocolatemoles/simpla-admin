@@ -22,7 +22,7 @@
 							
 							<div class="list-actions">
 								<a href="../catalog/{$category->url}" class="list-action" data-action="preview" title="Предпросмотр в новом окне" target="_blank"></a>
-								<a href="#" class="list-action" data-action="enable" title="Активна"></a>
+								<a href="#" class="list-action" data-action="visible" title="Активна"></a>
 								<a href="#" class="list-action" data-action="delete" title="Удалить"></a>
 							</div>
 

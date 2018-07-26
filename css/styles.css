@@ -172,7 +172,7 @@
 .list-action[data-action="duplicate"]:before { content: '\f24d' }
 .list-action[data-action="delete"]:before { content: '\e80b' }
 .list-action[data-action="restore"]:before { content: '\e81a' }
-.list-action[data-action="in_filter"]:before { content: '\f204' }
+.list-action[data-action="in_filter"]:before { content: '\f1de'; color: #bfbfbf }
 .list-action[data-action="approve"]:before { content: '\e815' }
 .list-action[data-action="print"]:before { content: '\e81d' }
 .list-action[data-action="paid"]:before { content: '\e82d' }
@@ -201,8 +201,7 @@
 	color: #FF9800
 }
 .in_filter .list-action[data-action="in_filter"]:before{
-	content: '\f205';
-	color: #8BC34A;
+	color: #FF9800;
 }
 .list-action[data-action="delete"]:hover{
 	color: red
