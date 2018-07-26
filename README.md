@@ -1,7 +1,7 @@
 # simpla-admin
 Шаблон панели управления для Simpla 2.3.8
 
-![preview](http://templates.chocolatemol.es/simpla-admin-promo.jpg)
+![preview](http://templates.chocolatemol.es/simpla-admin-preview.jpg)
 
 ## Установка
 Переместить содержимое папки **simpla/design/** и распаковать в нее файлы шаблона
