@@ -1,19 +1,35 @@
-{if $category}
-	{$meta_title = "Товары: {$category->name}" scope=root}
-{else}
-	{$meta_title = 'Товары' scope=root}
+{$meta_title = "Товары{if $brand->name} &laquo;{$brand->name}&raquo;{/if}" scope=root}
+
+{if $filter == 'featured'}
+	{$plural_filter = $products_count|plural:'рекомендуемый':'рекомендуемых':'рекомендуемых'}	
+{elseif $filter == 'visible'}
+	{$plural_filter = $products_count|plural:'активный':'активных':'активных'}	
+{elseif $filter == 'hidden'}
+	{$plural_filter = $products_count|plural:'неактивный':'неактивных':'неактивных'}	
+{elseif $filter == 'outofstock'}
+	{$plural_filter = $products_count|plural:'отсутствующий':'отсутствующих':'отсутствующих'}	
 {/if}
 
 {if $products_count}
-	{if $category->name || $brand->name}
-		{$page_subtitle = "{$category->name} {$brand->name} {$products_count} {$products_count|plural:'товар':'товаров':'товара'}" scope=root}	
-	{elseif $keyword}
-		{$page_subtitle = "{$products_count|plural:'Найден':'Найдено':'Найдено'} {$products_count} {$products_count|plural:'товар':'товаров':'товара'}" scope=root}
+	{if $keyword}
+		{$page_subtitle = "По запросу &laquo;{$keyword}&raquo; найден{$products_count|plural:'':'о':'о'} {$products_count} товар{$products_count|plural:'':'ов':'а'}" scope=root}	
+	{elseif $filter == 'discounted'}
+		{$page_subtitle = "{$products_count} товар{$products_count|plural:'':'ов':'а'} со скидкой" scope=root}	
 	{else}
-		{$page_subtitle = "{$products_count} {$products_count|plural:'товар':'товаров':'товара'}" scope=root}
+		{$page_subtitle = "{$products_count}{if $plural_filter} {$plural_filter}{/if} товар{$products_count|plural:'':'ов':'а'}" scope=root}	
 	{/if}
 {else}
-	{$page_subtitle = "Нет товаров" scope=root}
+	{if $keyword}
+		{$page_subtitle = "По запросу &laquo;{$keyword}&raquo; товаров не найдено" scope=root}
+	{elseif $filter == 'discounted'}
+		{$page_subtitle = "Нет товаров со скидкой" scope=root}	
+	{else}
+		{$page_subtitle = "Нет{if $plural_filter} {$plural_filter}{/if} товаров" scope=root}	
+	{/if}
+{/if}
+
+{if $category->name}
+	{$page_subtitle = $page_subtitle|cat:" в категории &laquo;{$category->name}&raquo;" scope=root}
 {/if}
 
 {if $products}

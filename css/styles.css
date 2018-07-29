@@ -1164,13 +1164,6 @@
     font-size: 16px;
 }
 
-.order-date{
-	position: absolute;
-    top: 40px;
-    left: 0;
-    color: #9E9E9E;
-}
-
 /* Licence */
 .license{
 	background: #fff;

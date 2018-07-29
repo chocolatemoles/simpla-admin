@@ -2,7 +2,8 @@
 	{$meta_title = $user->name|escape scope=root}
 {/if}
 
-{$page_title = "Покупатель: {$user->name}" scope=root}
+{$page_title = "Редактирование покупателя" scope=root}
+
 
 {if $message_success == 'updated'}
 	{$alert_success = 'Покупатель отредактирован' scope=root}
@@ -14,7 +15,7 @@
 	{$alert_error = 'Введите email покупателя' scope=root}
 {/if}
 
-<form method="post" autocomplete="off" data-form="main">
+<form method="post" autocomplete="off">
 	<input type="hidden" name="session_id" value="{$smarty.session.id}">
 	<input type="hidden" name="id" value="{$user->id|escape}">
 

@@ -1,11 +1,13 @@
 {$meta_title = 'Блог' scope=root}
 
-{if $keyword && $posts_count}
-	{$page_subtitle = "{$posts_count|plural:'Нашлась':'Нашлись':'Нашлись'} {$posts_count} {$posts_count|plural:'запись':'записей':'записи'}" scope=root}
+{if $keyword}
+	{if $posts_count}
+		{$page_subtitle = "По запросу &laquo;{$keyword}&raquo; найден{$posts_count|plural:'а':'о':'о'} {$posts_count} {$posts_count|plural:'запись':'записей':'записи'}" scope=root}
+	{else}
+		{$page_subtitle = "По запросу &laquo;{$keyword}&raquo; записей не найдено" scope=root}
+	{/if}
 {elseif $posts_count}
-	{$page_subtitle = "{$posts_count} {$posts_count|plural:'запись':'записей':'записи'}" scope=root}
-{else}
-	{$page_subtitle = 'Нет записей' scope=root}
+	{$page_subtitle = "{$posts_count} запис{$posts_count|plural:'ь':'ей':'и'}" scope=root}
 {/if}
 
 {if $posts}
@@ -23,8 +25,6 @@
 					
 					<div class="list-name">
 						<a href="index.php?module=PostAdmin&id={$post->id}">{$post->name|escape}</a>
-						<br>
-						
 					</div>
 					
 					<div class="list-info">
@@ -54,6 +54,8 @@
 	</form>
 
 	{include file='pagination.tpl'}
+{else}
+	<p class="alert">Нет записей</p>
 {/if}
 
 {capture name = 'sidebar'}

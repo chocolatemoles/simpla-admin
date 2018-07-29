@@ -129,6 +129,13 @@ html{
 	border-bottom: 1px solid #d9d9d9;
     padding-bottom: 1em;
 }
+.page-subtitle{
+	position: absolute;
+    top: 40px;
+    left: 0;
+    color: #757575;
+	margin: 0
+}
 .block-title{
 	font-size: 1.5em;
 }

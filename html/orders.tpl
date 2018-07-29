@@ -10,7 +10,15 @@
 {$meta_title = 'Поиск заказов' scope=root}
 {/if}
 
-{$page_subtitle = "{if $orders_count}{$orders_count}{else}Нет{/if} заказ{$orders_count|plural:'':'ов':'а'}" scope=root}
+{if $keyword}
+	{if $orders_count}
+		{$page_subtitle = "По запросу &laquo;{$keyword}&raquo;{if $label} с меткой &laquo;{$label->name}&raquo; {/if}найден{$orders_count|plural:'':'о':'о'} {$orders_count} заказ{$orders_count|plural:'':'ов':'а'}" scope=root}
+	{else}
+		{$page_subtitle = "По запросу &laquo;{$keyword}&raquo;{if $label} с меткой &laquo;{$label->name}&raquo; {/if}заказов не найдено" scope=root}
+	{/if}
+{else}
+	{$page_subtitle = "{if $orders_count}{$orders_count}{else}Нет{/if} заказ{$orders_count|plural:'':'ов':'а'}{if $label} с меткой &laquo;{$label->name}&raquo; {/if}" scope=root}
+{/if}
 
 {if $message_error == 'error_closing'}
 	{$alert_error = 'Нехватка некоторых товаров на складе' scope=root}
@@ -109,6 +117,8 @@
 			<input type="hidden" name="action" value="">
 		{/foreach}
 	</form>
+{else}
+	<p class="alert">Нет заказов</p>
 {/if}
 
 {capture name = 'sidebar'}	

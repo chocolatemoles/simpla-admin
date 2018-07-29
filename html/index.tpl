@@ -68,7 +68,7 @@
 			</div>
 
 			<div class="content-top">
-				{include file = 'inc/share.tpl'}
+				<p class="page-title">{if $page_title}{$page_title}{else}{$meta_title}{/if}</p>
 
 				{if $smarty.get.module == 'OrderAdmin'}
 					<div class="siblings-orders">
@@ -81,7 +81,7 @@
 					</div>
 					
 					{if $order->date}
-						<div class="order-date">
+						<div class="page-subtitle">
 							{assign months [
 								'Jan'=>'января',
 								'Feb'=>'февраля',
@@ -100,12 +100,8 @@
 							{$order->date|date_format:'%e'} {$months[$order->date|date_format:'%b']} {$order->date|date:'Y'}, {$order->date|time}
 						</div>
 					{/if}
-				{/if}
-
-				<p class="page-title">{if $page_title}{$page_title}{else}{$meta_title}{/if}</p>
-				
-				{if $page_subtitle}
-					<p class="block-title">{$page_subtitle}</p>
+				{elseif $page_subtitle}
+					<p class="page-subtitle">{$page_subtitle}</p>
 				{/if}
 				
 				{if $alert_success}
@@ -117,6 +113,8 @@
 				{elseif $alert}
 					<p class="alert">{$alert}</p>
 				{/if}
+				
+				{include file = 'inc/share.tpl'}
 			</div>
 			
 			<div class="clearfix">

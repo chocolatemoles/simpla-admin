@@ -1,8 +1,14 @@
 {$meta_title = 'Обратная связь' scope=root}
 
-{if $feedbacks_count}
-	{$page_subtitle = "{$feedbacks_count} {$feedbacks_count|plural:'сообщение':'сообщений':'сообщения'}" scope=root}
-{/if}	
+{if $keyword}
+	{if $feedbacks_count}
+		{$page_subtitle = "По запросу &laquo;{$keyword}&raquo; найден{$feedbacks_count|plural:'':'о':'о'} {$comments_count} сообщени{$comments_count|plural:'е':'й':'я'}" scope=root}
+	{else}
+		{$page_subtitle = "По запросу &laquo;{$keyword}&raquo; сообщений не найдено" scope=root}
+	{/if}
+{else}
+	{$page_subtitle = "{if $feedbacks_count}{$feedbacks_count}{else}Нет{/if} сообщен{$feedbacks_count|plural:'е':'й':'я'}" scope=root}
+{/if}
 
 {if $feedbacks}
 	<form method="post" data-form="main">

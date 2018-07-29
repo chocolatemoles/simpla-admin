@@ -1,12 +1,19 @@
 {$meta_title = 'Покупатели' scope=root}
 
-{* Заголовок *}
-{if $keyword && $users_count>0}
-	{$page_subtitle = "{$users_count|plural:'Нашелся':'Нашлось':'Нашлись'} {$users_count} {$users_count|plural:'покупатель':'покупателей':'покупателя'}" scope=root}
-{elseif $users_count>0}
-	{$page_subtitle = "{$users_count} {$users_count|plural:'покупатель':'покупателей':'покупателя'}" scope=root}
+{if $keyword}
+	{if $users_count > 0}
+		{$page_subtitle = "По запросу &laquo;{$keyword}&raquo; найден{$users_count|plural:'':'о':'о'} {$users_count} покупател{$users_count|plural:'ь':'ей':'я'}" scope=root}
+	{else}
+		{$page_subtitle = "По запросу &laquo;{$keyword}&raquo; покупателей не найдено" scope=root}
+	{/if}
+{elseif $users_count > 0}
+	{$page_subtitle = "{$users_count} покупател{$users_count|plural:'ь':'ей':'я'}" scope=root}
 {else}
 	{$page_subtitle = "Нет покупателей" scope=root}
+{/if}
+
+{if $group}
+	{$page_subtitle = $page_subtitle|cat:" в группе &laquo;{$group->name}&raquo;" scope=root}
 {/if}
 
 {if $users}
@@ -57,6 +64,8 @@
 			<input class="btn" type="submit" value="Применить">
 		</div>
 	</form>
+{else}
+	<p class="alert">Нет покупателей</p>
 {/if}
 
 {capture name = 'sidebar'}

@@ -1,13 +1,19 @@
 {$meta_title='Комментарии' scope=root}
 
-{if $keyword && $comments_count}
-	{$page_subtitle = "{$comments_count|plural:'Нашелся':'Нашлось':'Нашлись'} {$comments_count} {$comments_count|plural:'комментарий':'комментариев':'комментария'}" scope=root}
-{elseif !$type}
-	{$page_subtitle = "{$comments_count} {$comments_count|plural:'комментарий':'комментариев':'комментария'}" scope=root}
-{elseif $type=='product'}
-	{$page_subtitle = "{$comments_count} {$comments_count|plural:'комментарий':'комментариев':'комментария'} к товарам" scope=root}
-{elseif $type=='blog'}
-	{$page_subtitle = "{$comments_count} {$comments_count|plural:'комментарий':'комментариев':'комментария'} к записям в блоге" scope=root}
+{if $keyword}
+	{if $comments_count}
+		{$page_subtitle = "По запросу &laquo;{$keyword}&raquo; найден{$comments_count|plural:'':'о':'о'} {$comments_count} комментари{$comments_count|plural:'й':'ев':'я'}" scope=root}
+	{else}
+		{$page_subtitle = "По запросу &laquo;{$keyword}&raquo; комментариев не найдено" scope=root}
+	{/if}
+{else}
+	{$page_subtitle = "{if $comments_count}{$comments_count}{else}Нет{/if} комментари{$comments_count|plural:'й':'ев':'я'}" scope=root}
+{/if}
+
+{if $type == 'product'}
+	{$page_subtitle = $page_subtitle|cat:" к товарам" scope=root}
+{elseif $type == 'blog'}
+	{$page_subtitle = $page_subtitle|cat:" к записям в блоге" scope=root}
 {/if}
 
 {if $comments}
