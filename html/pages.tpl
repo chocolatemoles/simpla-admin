@@ -20,7 +20,7 @@
 						
 					<div class="list-actions">
 						<a href="../{$page->url}" class="list-action" title="Предпросмотр в новом окне" target="_blank" data-action="preview"></a>
-						<a href="#" class="list-action" title="Активна" data-action="enable"></a>
+						<a href="#" class="list-action" title="Активна" data-action="visible"></a>
 						<a href="#" class="list-action" title="Удалить" data-action="delete"></a>
 					</div>
 				</div>

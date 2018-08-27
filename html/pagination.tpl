@@ -19,10 +19,10 @@
 		{* До какой страницы выводить - выводим всё окно, но не более ощего количества страниц *}
 		{$page_to = min($page_from+$visible_pages, $pages_count-1)}
 
-		{if $current_page>1}<a href="{url page=$current_page-1}" class="js-page-prev"><i class="icon-angle-left"></i></a>{/if}
+		{if $current_page>1}<a href="{url page=$current_page-1}"><i class="icon-angle-left"></i></a>{/if}
 		
 		{* Ссылка на 1 страницу отображается всегда *}
-		<a href="{url page=1}" class="{if $current_page == 1}active{else}droppable{/if}" data-type="page" data-id="">1</a>
+		<a href="{url page=1}" class="{if $current_page == 1}active{/if}" data-type="page" data-id="">1</a>
 
 		{* Выводим страницы нашего "окна" *}
 		{section name=pages loop=$page_to start=$page_from}
@@ -32,16 +32,16 @@
 			{if ($p == $page_from+1 && $p!=2) || ($p == $page_to && $p != $pages_count-1)}
 				<a href="{url page=$p}" class="{if $p == $current_page}active{/if}">...</a>
 			{else}
-				<a href="{url page=$p}" class="{if $p == $current_page}active{else}droppable{/if}" data-type="page" data-id="">{$p}</a>
+				<a href="{url page=$p}" class="{if $p == $current_page}active{/if}" data-type="page" data-id="">{$p}</a>
 			{/if}
 		{/section}
 
 		{* Ссылка на последнююю страницу отображается всегда *}
-		<a href="{url page=$pages_count}" class="{if $current_page == $pages_count}active{else}droppable{/if}" data-type="page" data-id="">{$pages_count}</a>
+		<a href="{url page=$pages_count}" class="{if $current_page == $pages_count}active{/if}" data-type="page" data-id="">{$pages_count}</a>
 
 		<a href="{url page=all}">все сразу</a>
 		
-		{if $current_page<$pages_count}<a href="{url page=$current_page+1}" class="js-page-next"><i class="icon-angle-right"></i></a>{/if}
+		{if $current_page<$pages_count}<a href="{url page=$current_page+1}"><i class="icon-angle-right"></i></a>{/if}
 	</div>
 	
 	<script>
