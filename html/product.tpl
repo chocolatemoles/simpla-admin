@@ -452,7 +452,6 @@
 		sort: true,
 		handle: '.list-move',
 		draggable: '.list-item',
-		forceFallback: true,
 		animation: 50,
 	});
 	
@@ -472,7 +471,6 @@
 		sort: true,
 		handle: '.list-move',
 		draggable: '.list-item',
-		forceFallback: true,
 		animation: 50,
 	});
 	
@@ -537,7 +535,6 @@
 	Sortable.create(document.querySelector('.product-images-grid'), {
 		sort: true,
 		draggable: '.product-image',
-		forceFallback: true,
 		animation: 50,
 	});
 

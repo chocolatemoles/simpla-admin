@@ -95,7 +95,6 @@
 		sort: true,
 		handle: '.list-move',
 		draggable: '.list-item:not(.js-currency-dummy)',
-		forceFallback: true,
 		animation: 50
 	});
 		

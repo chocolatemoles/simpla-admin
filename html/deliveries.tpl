@@ -53,7 +53,6 @@
 	Sortable.create(document.getElementsByClassName('list')[0], {
 		handle: '.list-move',
 		draggable: '.list-item',
-		forceFallback: true,
 		animation: 50,
 		onChoose: function(){
 			$form.find('input[type=checkbox]').prop('checked', false);
