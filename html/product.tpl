@@ -438,6 +438,14 @@
 			}
 			
 		})
+		.on('focus', 'input[name^="variants[stock]"]', function(){
+			if(this.value == '∞')
+				this.value = '';
+		})
+		.on('blur', 'input[name^="variants[stock]"]', function(){
+			if(this.value == '')
+				this.value = '∞';
+		});
 
 	// Sort | Variants
 	Sortable.create(document.querySelector('.js-list-variants'), {
@@ -532,17 +540,6 @@
 		forceFallback: true,
 		animation: 50,
 	});
-	
-	// Unlimited stock
-	$('input[name^="variants[stock]"]')
-		.focus(function(){
-			if(this.value == '∞')
-				this.value = '';
-		})
-		.blur(function (){
-			if(this.value == '')
-				this.value = '∞';
-		});
 
 	// Autocomplete | Related products
 	var $autocompleteInputRelated = $('.js-autocomplete-related');

@@ -2,10 +2,24 @@
 	.no-touchevents .content{
 		min-height: 100vh;
 	}
-	
+	.no-touchevents .container{
+		width: 1200px;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.no-touchevents .content .container{
+		min-height: 100vh;
+		width: 1170px;
+		box-shadow: -1170px 0 0 0 #303747;
+		padding-left: 0;
+		padding-right: 0;
+	}
 	/* Base layout */
 	.no-touchevents .container{
-		width: 1200px
+		width: 1170px;
+		box-shadow: -1170px 0 0 0 #303747;
+		padding-left: 0;
+		padding-right: 0;
 	}
 	.no-touchevents .content-top{
 		margin-left: 260px;
@@ -15,6 +29,7 @@
 		position: fixed;
 		top: 0;
 		bottom: 0;
+		box-shadow: -3px 0 3px -3px rgba(0, 0, 0, 0.4);
 	}
 	.no-touchevents .content-center{
 		width: 710px;

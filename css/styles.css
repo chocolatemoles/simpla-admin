@@ -68,6 +68,7 @@
 .list-name{
     line-height: 20px;
 	min-height: 20px;
+	padding-right: 110px;
 }
 .list-name a{
     text-decoration: none;

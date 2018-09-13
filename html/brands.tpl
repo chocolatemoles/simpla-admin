@@ -22,7 +22,7 @@
 		</div>
 
 		<div class="action-panel">
-			<a href="#" class="action-link" data-action="select-all">Выбрать все</a>
+			<a href="#" class="action-link" data-action="check-all">Выбрать все</a>
 
 			<select name="action" class="form-input" data-width="auto">
 				<option value="delete">Удалить</option>
