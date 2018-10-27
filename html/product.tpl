@@ -188,17 +188,19 @@
 		<div class="tabs-content">
 			<div class="tabs-tab active" data-content="images">
 				<!-- Tabs / Images -->
-				<div class="product-images-grid clearfix">
-					{foreach $product_images as $image}
-					<div class="product-image">
-						<input type="hidden" name="images[]" value="{$image->id}">
-						<a href="#" class="product-image-delete" title="Удалить"></a>
-						<img src="{$image->filename|resize:100:100}" alt="">
-					</div>
-					{/foreach}
-					
-					<div class="product-images-dropzone-box">
-						<input type="file" name="dropped_images[]" class="product-images-dropinput" accept="image/*" title="Загрузить изображние" multiple>
+				<div class="clearfix">
+					<div class="product-images-grid clearfix">
+						{foreach $product_images as $image}
+						<div class="product-image">
+							<input type="hidden" name="images[]" value="{$image->id}">
+							<a href="#" class="product-image-delete" title="Удалить"></a>
+							<img src="{$image->filename|resize:100:100}" alt="">
+						</div>
+						{/foreach}
+						
+						<div class="product-images-dropzone-box">
+							<input type="file" name="dropped_images[]" class="product-images-dropinput" accept="image/*" title="Загрузить изображние" multiple>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -477,6 +479,7 @@
 	// Images
 	var $imagesGrid = $('.product-images-grid');
 	var $imagesDropInput = $('.product-images-dropinput');
+	var $imagesDropInputClone = $imagesDropInput.clone();
 	var $imagesDropZone = $('.product-images-dropzone-box');
 	
 	$imagesGrid.on('click', '.product-image-delete', function(e){
@@ -485,7 +488,7 @@
 		$(this).parent().remove();
 	});
 	
-	$imagesDropInput.on('change', function(e){
+	function dropFiles(e){
 		var files = e.target.files; 
 		
 		$.each(files, function(i, file){
@@ -515,13 +518,19 @@
 						]
 					});
 
-					$image.insertBefore($imagesDropZone)
+					$image.insertBefore($imagesDropZone);
+
+					
+					$imagesDropZone.find('.product-images-dropinput').hide();
+					$imagesDropZone.append($imagesDropInputClone.clone());
 				}
 			})(file);
 			
 			reader.readAsDataURL(file);
 		})
-	});
+	}
+	
+	$imagesDropZone.on('change', '.product-images-dropinput', dropFiles);
 	
 	$(document)
 		.on('dragover', function(){ 

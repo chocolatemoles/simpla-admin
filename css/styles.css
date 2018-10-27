@@ -934,8 +934,9 @@
 }
 
 .product-images-grid{
-	margin-right: -10px;
-	margin-bottom: -8px
+	float: left;
+	margin-bottom: -8px;
+	margin-right: -10px
 }
 .product-image{
     float: left;
@@ -980,7 +981,8 @@
     width: 118px;
     height: 118px;
     border-radius: 3px;
-	margin-bottom: 8px
+	margin-bottom: 8px;
+	margin-right: -10px
 }
 .product-images-dropzone-box:before{
 	font-family: "fontello";

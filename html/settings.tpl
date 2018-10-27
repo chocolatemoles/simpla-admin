@@ -24,7 +24,7 @@
 	<div class="form-row">
 		<label class="form-label">Формат даты</label>
 		<input class="form-input" type="text" name="date_format" value="{$settings->date_format|escape}" data-width="sm">
-	</li>
+	</div>
 	
 	<div class="form-row">
 		<label class="form-label">Email для восстановления пароля</label>

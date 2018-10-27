@@ -153,7 +153,7 @@
                                     <tr>
                                         <td align="center" style="font-size:0px;padding:10px 25px;word-break:break-word;">
                                             <div style="font-family:Roboto, Arial;font-size:16px;line-height:1;text-align:center;color:#4a4a4a;">
-                                                <span style="font-size: 14px">на сумму</span> 224 320 Руб
+                                                <span style="font-size: 14px">на сумму</span> {$order->total_price|convert:$main_currency->id}&nbsp;{$main_currency->sign}
                                             </div>
                                         </td>
                                     </tr>
@@ -208,6 +208,7 @@
                                                 <tr>
                                                     <td style="padding: 5px 0 0; width: 35px;  vertical-align: top">
 														<a href="{$config->root_url}/products/{$purchase->product->url}">
+															{$image = $purchase->product->images[0]}
 															<img src="{$image->filename|resize:35:35}" style="border:0;display:block;outline:none;text-decoration:none;width:100%;" width="35" height="auto"/>
 														</a>
 													</td>
