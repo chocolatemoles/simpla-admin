@@ -282,6 +282,7 @@
 .watermark-image{
     position: absolute;
     max-width: none;
+    max-height: none;
 }
 
 /* Single image */
